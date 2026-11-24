@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="bg" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моето интерактивно портфолио</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <h1>Моето интерактивно портфолио</h1>
+            <button id="theme-toggle" class="btn-secondary" aria-label="Превключване на тема">🌙 Тъмна тема</button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <!-- 1. Лично представяне -->
+        <section class="card intro-section">
+            <h2>За мен</h2>
+            <p>Здравейте! Казвам се Кристиян, Интересно ми е програмирането. Искам да участвам в тази стажантска програма, защото искам да имам малко реална практика с програмирането в работна среда, в която да се подобря, за да правя работещ софтуер.</p>
+
+            <h3>Какво вече умея</h3>
+            <p>Познавам основите на C#.</p>
+            <h3>Трите неща, които искам да науча, и първа стъпка за тях:</h3>
+            <ul class="learning-goals-intro">
+                <li><strong>Да се науча да програмирам по-добре</strong> — <em>Първа стъпка:</em> Да се науча как да сторя този сайт.</li>
+                <li><strong>Да изкарам малко личен опит в работна среда</strong> — <em>Първа стъпка:</em> Да изпълнявам нещата, които ни давате и научавайки неща, когато ги правя.</li>
+                <li><strong>Да стигна до края на тази стажантска програма</strong> — <em>Първа стъпка:</em> Правене на тази задача и следване на срока.</li>
+            </ul>
+        </section>
+
+        <!-- 2 & 4. Интерактивен учебен план и напредък -->
+        <section class="card tracker-section">
+            <h2>Моят интерактивен учебен план</h2>
+
+            <!-- Броячи и напредък -->
+            <div class="progress-container">
+                <div class="progress-stats">
+                    <span>Общо цели: <strong id="total-count">3</strong></span>
+                    <span>Завършени: <strong id="completed-count">0</strong></span>
+                    <span>Напредък: <strong id="progress-percent">0%</strong></span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <!-- Форма за добавяне -->
+            <form id="goal-form" class="goal-form">
+                <div class="input-group">
+                    <input type="text" id="goal-input" placeholder="Добави нова учебна цел..." autocomplete="off">
+                    <button type="submit" class="btn-primary">Добави цел</button>
+                </div>
+                <div id="error-message" class="error-message hidden"></div>
+            </form>
+
+            <!-- Филтри -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Всички</button>
+                <button class="filter-btn" data-filter="active">Активни</button>
+                <button class="filter-btn" data-filter="completed">Завършени</button>
+            </div>
+
+            <!-- Списък с цели -->
+            <ul id="goals-list" class="goals-list">
+                <!-- Динамично съдържание -->
+            </ul>
+            <div id="empty-state" class="empty-state hidden">Няма намерени цели в тази категория.</div>
+        </section>
+    </main>
+
+    <!-- Модален прозорец за потвърждение на изтриване -->
+    <div id="confirm-modal" class="modal hidden">
+        <div class="modal-content">
+            <p>Сигурни ли сте, че искате да изтриете тази цел?</p>
+            <div class="modal-actions">
+                <button id="modal-cancel" class="btn-secondary">Отказ</button>
+                <button id="modal-confirm" class="btn-danger">Изтрий</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Интерактивно портфолио - Стажантска програма INFORCE</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
